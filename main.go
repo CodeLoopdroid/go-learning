@@ -44,4 +44,6 @@ func main() {
 
 	fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName, lastName, email, userTickets)
 	fmt.Printf("Remaining tickets %v\n", remaining_tickets)
+
+	fmt.Printf("These are all our bookings: %v\n", booking)
 }
