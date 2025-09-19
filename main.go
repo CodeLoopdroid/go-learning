@@ -7,9 +7,9 @@ import (
 
 func main() {
 	conference_name := "Go Conference" // You can’t use := outside a function (like at package level). There you must use var.
-	x := 5
-	x, y := 10, 20 // x already exists, but y is new → allowed
-	fmt.Println(x, y)
+	// x := 5
+	// x, y := 10, 20 // x already exists, but y is new → allowed
+	// fmt.Println(x, y)
 	const consttickets int = 50
 	var remaining_tickets uint = 50 // Explicitly define the datatype
 	// var booking = [50]int{1,2,3}
@@ -25,6 +25,10 @@ func main() {
 	var userTickets uint
 
 	for {
+
+		var l2 uint
+		fmt.Scan(&l2)
+
 		fmt.Print("Enter your first name : ")
 		fmt.Scan(&firstName)
 
@@ -56,6 +60,11 @@ func main() {
 		}
 
 		// fmt.Printf("These are all our bookings: %v\n", booking)
-		fmt.Printf("The last names of booking are: %v\n", arrfirstnam)
+		fmt.Printf("The first names of booking are: %v\n", arrfirstnam)
+
+		if remaining_tickets == 0 {
+			fmt.Println("Our conference is booked out. Come back next year.")
+			break
+		}
 	}
 }
