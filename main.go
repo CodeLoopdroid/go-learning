@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	conference_name := "Go Conference" // You can’t use := outside a function (like at package level). There you must use var.
@@ -22,30 +25,37 @@ func main() {
 	var userTickets uint
 
 	for {
-	fmt.Print("Enter your first name : ")
-	fmt.Scan(&firstName)
+		fmt.Print("Enter your first name : ")
+		fmt.Scan(&firstName)
 
-	fmt.Print("Enter your last name : ")
-	fmt.Scan(&lastName)
+		fmt.Print("Enter your last name : ")
+		fmt.Scan(&lastName)
 
-	fmt.Print("Enter your Email :")
-	fmt.Scan(&email)
+		fmt.Print("Enter your Email :")
+		fmt.Scan(&email)
 
-	fmt.Print("Enter number of tickets :")
-	fmt.Scan(&userTickets)
+		fmt.Print("Enter number of tickets :")
+		fmt.Scan(&userTickets)
 
-	remaining_tickets = remaining_tickets - userTickets
-	// booking[0] = lastName + " " + firstName
-	booking = append(booking, lastName+" "+firstName)
+		remaining_tickets = remaining_tickets - userTickets
+		// booking[0] = lastName + " " + firstName
+		booking = append(booking, lastName+" "+firstName)
 
-	// fmt.Printf("The whole array: %v\n", booking)
-	// fmt.Printf("The firts value: %v\n", booking[0])
-	// fmt.Printf("Array length: %v\n", len(booking))
-	// fmt.Printf("Array type %T\n", booking)
+		// fmt.Printf("The whole array: %v\n", booking)
+		// fmt.Printf("The firts value: %v\n", booking[0])
+		// fmt.Printf("Array length: %v\n", len(booking))
+		// fmt.Printf("Array type %T\n", booking)
 
-	fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName, lastName, email, userTickets)
-	fmt.Printf("Remaining tickets %v\n", remaining_tickets)
+		fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName, lastName, email, userTickets)
+		fmt.Printf("Remaining tickets %v\n", remaining_tickets)
 
-	fmt.Printf("These are all our bookings: %v\n", booking)
+		arrfirstnam := []string{}
+
+		for _, j := range booking {
+			arrfirstnam = append(arrfirstnam, strings.Fields(j)[0])
+		}
+
+		// fmt.Printf("These are all our bookings: %v\n", booking)
+		fmt.Printf("The last names of booking are: %v\n", arrfirstnam)
 	}
 }
