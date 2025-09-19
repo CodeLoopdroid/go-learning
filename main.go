@@ -10,7 +10,7 @@ func main() {
 	const consttickets int = 50
 	var remaining_tickets uint = 50 // Explicitly define the datatype
 	// var booking = [50]int{1,2,3}
-	var booking [50]int
+	var booking [50]string
 
 
 	fmt.Printf("DataType of %T, DataType of %T, DataType of %T", conference_name, consttickets, remaining_tickets)
@@ -34,6 +34,12 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remaining_tickets = remaining_tickets - userTickets
+	booking[0] = lastName + " " + firstName
+
+	fmt.Printf("The whole array: %v\n", booking)
+	fmt.Printf("The firts value: %v\n", booking[0])
+	fmt.Printf("Array length: %v\n", len(booking))
+	fmt.Printf("Array type %T\n", booking)
 
 	fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName,lastName, email, userTickets)
 	fmt.Printf("Remaining tickets %v\n", remaining_tickets)
