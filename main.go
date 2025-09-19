@@ -17,19 +17,17 @@ func main(){
 	var firstName,lastName,email string
 	var userTickets int
 
-	fmt.Println("Enter your first name : ")
+	fmt.Print("Enter your first name : ")
 	fmt.Scan(&firstName)
 
-	fmt.Println("Enter your last name : ")
+	fmt.Print("Enter your last name : ")
 	fmt.Scan(&lastName)
 
-	fmt.Println("Enter your Email")
+	fmt.Print("Enter your Email :")
 	fmt.Scan(&email)
 
-	fmt.Println("Enter the ")
+	fmt.Print("Enter number of tickets :")
+	fmt.Scan(&userTickets)
 
-
-	userTickets = 2
-
-	fmt.Printf("User %v booked %v tickets\n", firstName, userTickets)
+	fmt.Printf("Thankyou %v for booking %v tickets. You will receive a conformation email at %v", firstName, lastName, email, userTickets)
 }
