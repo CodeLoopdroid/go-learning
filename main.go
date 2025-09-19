@@ -9,6 +9,9 @@ func main() {
 	fmt.Println(x, y)
 	const consttickets int = 50
 	var remaining_tickets uint = 50 // Explicitly define the datatype
+	// var booking = [50]int{1,2,3}
+	var booking [50]int
+
 
 	fmt.Printf("DataType of %T, DataType of %T, DataType of %T", conference_name, consttickets, remaining_tickets)
 	fmt.Printf("Welcome to %v booking application\n", conference_name)
@@ -32,6 +35,6 @@ func main() {
 
 	remaining_tickets = remaining_tickets - userTickets
 
-	fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v", firstName,lastName, email, userTickets)
-	
+	fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName,lastName, email, userTickets)
+	fmt.Printf("Remaining tickets %v\n", remaining_tickets)
 }
