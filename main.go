@@ -21,6 +21,7 @@ func main() {
 	var firstName, lastName, email string
 	var userTickets uint
 
+	for {
 	fmt.Print("Enter your first name : ")
 	fmt.Scan(&firstName)
 
@@ -46,4 +47,5 @@ func main() {
 	fmt.Printf("Remaining tickets %v\n", remaining_tickets)
 
 	fmt.Printf("These are all our bookings: %v\n", booking)
+	}
 }
