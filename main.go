@@ -42,35 +42,34 @@ func main() {
 		fmt.Scan(&userTickets)
 
 		if userTickets < remaining_tickets {
+
+			remaining_tickets = remaining_tickets - userTickets
+			// booking[0] = lastName + " " + firstName
+			booking = append(booking, lastName+" "+firstName)
+
+			// fmt.Printf("The whole array: %v\n", booking)
+			// fmt.Printf("The firts value: %v\n", booking[0])
+			// fmt.Printf("Array length: %v\n", len(booking))
+			// fmt.Printf("Array type %T\n", booking)
+
+			fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName, lastName, email, userTickets)
+			fmt.Printf("Remaining tickets %v\n", remaining_tickets)
+
+			arrfirstnam := []string{}
+
+			for _, j := range booking {
+				arrfirstnam = append(arrfirstnam, strings.Fields(j)[0])
+			}
+
+			// fmt.Printf("These are all our bookings: %v\n", booking)
+			fmt.Printf("The first names of booking are: %v\n", arrfirstnam)
+			cond := remaining_tickets == 0 
+			if cond {
+				fmt.Println("Our conference is booked out. Come back next year.")
+				break
+			}
+		}else {
 			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remaining_tickets, userTickets)
-			// break
-			continue
-		}
-
-		remaining_tickets = remaining_tickets - userTickets
-		// booking[0] = lastName + " " + firstName
-		booking = append(booking, lastName+" "+firstName)
-
-		// fmt.Printf("The whole array: %v\n", booking)
-		// fmt.Printf("The firts value: %v\n", booking[0])
-		// fmt.Printf("Array length: %v\n", len(booking))
-		// fmt.Printf("Array type %T\n", booking)
-
-		fmt.Printf("Thankyou %s %v for booking %v tickets. You will receive a conformation email at %v\n", firstName, lastName, email, userTickets)
-		fmt.Printf("Remaining tickets %v\n", remaining_tickets)
-
-		arrfirstnam := []string{}
-
-		for _, j := range booking {
-			arrfirstnam = append(arrfirstnam, strings.Fields(j)[0])
-		}
-
-		// fmt.Printf("These are all our bookings: %v\n", booking)
-		fmt.Printf("The first names of booking are: %v\n", arrfirstnam)
-
-		if remaining_tickets == 0 {
-			fmt.Println("Our conference is booked out. Come back next year.")
-			break
 		}
 	}
 }
