@@ -26,9 +26,6 @@ func main() {
 
 	for {
 
-		var l2 uint
-		fmt.Scan(&l2)
-
 		fmt.Print("Enter your first name : ")
 		fmt.Scan(&firstName)
 
@@ -63,12 +60,12 @@ func main() {
 
 			// fmt.Printf("These are all our bookings: %v\n", booking)
 			fmt.Printf("The first names of booking are: %v\n", arrfirstnam)
-			cond := remaining_tickets == 0 
+			cond := remaining_tickets == 0
 			if cond {
 				fmt.Println("Our conference is booked out. Come back next year.")
 				break
 			}
-		}else {
+		} else {
 			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remaining_tickets, userTickets)
 		}
 	}
